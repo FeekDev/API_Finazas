@@ -14,7 +14,7 @@ class Finanzas_Personales(models.Model):
     have some validators to specific only
     the values needed
     '''
-    ID = models.IntegerField(primary_key=True, null=False)
+    id = models.IntegerField(primary_key=True, null=False)
     nombreCompleto = models.CharField(blank=False)
     ingresosPersonales = models.IntegerField()
     fechaRegistro = models.TimeField(default=time)
