@@ -15,7 +15,7 @@ class Finanzas_Personales(models.Model):
     the values needed
     '''
     id = models.IntegerField(primary_key=True, null=False)
-    nombreCompleto = models.CharField(blank=False)
+    nombreCompleto = models.CharField(blank=False, max_length=30)
     ingresosPersonales = models.IntegerField()
     fechaRegistro = models.TimeField(default=time)
     gastosMes = models.IntegerField()

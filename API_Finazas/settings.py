@@ -77,8 +77,15 @@ WSGI_APPLICATION = 'API_Finazas.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'OPTIONS': {
+            'options': '-c search_path=finanzas_personales'
+        },
+        'NAME': 'finances',
+        'USER': 'finanzas',
+        'PASSWORD': 'finanzas',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
