@@ -5,7 +5,7 @@ from datetime import time
 
 
 # Model
-class Finanzas_Personales(models.Model):
+class FinanzasPersonales(models.Model):
     '''
     Table is Finanzas_Personales
 
@@ -14,10 +14,12 @@ class Finanzas_Personales(models.Model):
     have some validators to specific only
     the values needed
     '''
-    id = models.IntegerField(primary_key=True, null=False)
     nombreCompleto = models.CharField(blank=False, max_length=30)
     ingresosPersonales = models.IntegerField()
     fechaRegistro = models.TimeField(default=time)
     gastosMes = models.IntegerField()
     deudasTotales = models.IntegerField()
     pagoDeuda = models.IntegerField()
+
+class Meta:
+    ordering = ['nombreCompleto']

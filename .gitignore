@@ -1,4 +1,7 @@
 *.pyc
 *.sqlite3
 *^__init__
+__init__.py
 0001_initial.py
+0002_alter_finanzas_personales_id.py
+0003_rename_finanzas_personales_finanzaspersonales.py
