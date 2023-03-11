@@ -5,3 +5,4 @@ __init__.py
 0001_initial.py
 0002_alter_finanzas_personales_id.py
 0003_rename_finanzas_personales_finanzaspersonales.py
+0004_alter_finanzaspersonales_ingresospersonales_and_more.py
