@@ -2,7 +2,8 @@
 from django.db import models
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
-from datetime import time
+from datetime import datetime
+
 
 def validador_ingresos(value):
     maximo_permitido = 3000000
@@ -30,7 +31,7 @@ class FinanzasPersonales(models.Model):
         blank=False,
         validators=[validador_ingresos],
     )
-    fechaRegistro = models.TimeField(default=time)
+    fechaRegistro = models.DateTimeField(auto_now=datetime.now)
     gastosMes = models.IntegerField()
     deudasTotales = models.IntegerField()
     pagoDeuda = models.IntegerField()
