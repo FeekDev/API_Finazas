@@ -3,7 +3,9 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.core.exceptions import ValidationError
 from datetime import datetime
+from django.utils.timezone import now
 
+DATE_FORMAT = '%d/%M/%Y'
 
 def validador_ingresos(value):
     maximo_permitido = 3000000
@@ -31,10 +33,15 @@ class FinanzasPersonales(models.Model):
         blank=False,
         validators=[validador_ingresos],
     )
-    fechaRegistro = models.DateTimeField(auto_now=datetime.now)
-    gastosMes = models.IntegerField()
-    deudasTotales = models.IntegerField()
-    pagoDeuda = models.IntegerField()
+    fechaRegistro = models.DateField(auto_now=True)
+    gastosMes = models.IntegerField(
+        blank=False)
+    deudasTotales = models.IntegerField(blank=False)
+    pagoDeuda = models.IntegerField(blank=False)
+
 
 class Meta:
     ordering = ['nombreCompleto']
+
+def datepublished(self):
+        return self.pub_date.strftime('%d/%M/%Y')

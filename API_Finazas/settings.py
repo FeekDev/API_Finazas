@@ -88,11 +88,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'OPTIONS': {
-            'options': '-c search_path=finanzas_personales'
+            'options': '-c search_path=finanzas'
         },
-        'NAME': 'finances',
-        'USER': 'finanzas',
-        'PASSWORD': 'finanzas',
+        'NAME': 'finanzas',
+        'USER': 'general',
+        'PASSWORD': 'general',
         'HOST': 'localhost',
         'PORT': '5432',
     }
